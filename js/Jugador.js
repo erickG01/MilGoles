@@ -1,14 +1,14 @@
-class Jugador{
+export default class Jugador{
     nombre ='';
-    golesEnSeleccion='';
-    golesEnLiga='';
-    golesEnBundesiga='';
-    golesEnPremierLeague='';
-    golesEnSerieA='';
-    golesEnChampions='';
-    golesEnLigueOne='';
+    golesEnSeleccion;
+    golesEnLiga;
+    golesEnBundesiga;
+    golesEnPremierLeague;
+    golesEnSerieA;
+    golesEnChampions;
+    golesEnLigueOne;
 
-    constructor(nombre, golesEnSeleccion, golesEnLiga,golesEnBundesiga,golesEnPremierLeague,golesEnSerieA,golesEnChampions,golesEnLigueOne){
+    constructor(nombre,golesEnLiga,golesEnChampions,golesEnLigueOne,golesEnSerieA,golesEnBundesiga,golesEnPremierLeague,golesEnSeleccion ){
         this.nombre=nombre;
         this.golesEnSeleccion=golesEnSeleccion;
         this.golesEnLiga=golesEnLiga;
@@ -16,7 +16,7 @@ class Jugador{
         this.golesEnPremierLeague=golesEnPremierLeague;
         this.golesEnSerieA=golesEnSerieA;
         this.golesEnChampions=golesEnChampions;
-        golesEnLigueOne=golesEnLigueOne;
+        this.golesEnLigueOne=golesEnLigueOne;
     }
 
     set setNombre(nombre){
