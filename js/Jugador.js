@@ -2,17 +2,17 @@ export default class Jugador{
     nombre ='';
     golesEnSeleccion;
     golesEnLiga;
-    golesEnBundesiga;
+    golesEnBundesLiga;
     golesEnPremierLeague;
     golesEnSerieA;
     golesEnChampions;
-    golesEnLigueOne;
+    golesEnLigueOne ;
 
-    constructor(nombre,golesEnLiga,golesEnChampions,golesEnLigueOne,golesEnSerieA,golesEnBundesiga,golesEnPremierLeague,golesEnSeleccion ){
+    constructor(nombre,golesEnLiga,golesEnChampions,golesEnLigueOne,golesEnSerieA,golesEnBundesLiga,golesEnPremierLeague,golesEnSeleccion ){
         this.nombre=nombre;
         this.golesEnSeleccion=golesEnSeleccion;
         this.golesEnLiga=golesEnLiga;
-        this.golesEnBundesiga=golesEnBundesiga;
+        this.golesEnBundesLiga=golesEnBundesLiga;
         this.golesEnPremierLeague=golesEnPremierLeague;
         this.golesEnSerieA=golesEnSerieA;
         this.golesEnChampions=golesEnChampions;

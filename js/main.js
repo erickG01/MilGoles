@@ -18,10 +18,11 @@ let golesBundesLiga=document.querySelector('.golesBundesLiga');
 let golesLegue1=document.querySelector('.golesLegue1');
 let golesSerieA=document.querySelector('.golesSerieA');
 let golesChampions=document.querySelector('.golesChampions');
-let golesSeleccion=document.querySelector('.golesSeleccion');    
+let golesSeleccion=document.querySelector('.golesSeleccion'); 
+let imgJugador=document.querySelector('.JugadorImg');   
 
  let j1=new Jugador('Messi',474,129,22,0,0,0,106),
-     j2=new Jugador('CristianoRonaldo',311,140,0,81,0,103,129),
+     j2=new Jugador('Cristiano Ronaldo',311,140,0,81,0,103,129),
      j3=new Jugador('Ricardo Carvalho',3,3,2,0,0,7,6),
      j4=new Jugador('Deco',11,13,0,0,0,5,5),
      j5=new Jugador('Luis Figo',68,24,0,9,0,0,32),
@@ -35,12 +36,12 @@ let golesSeleccion=document.querySelector('.golesSeleccion');
      j13=new Jugador('DiMaria',21,23,57,0,0,0,29),
      j14=new Jugador('Tomas Muller',0,53,0,0,145,0,45),
      j15=new Jugador('Marcos Reus',0,23,0,0,153,0,15),
-     j16=new Jugador('Mesut Özil',19,11,0,0,13,33,23),
+     j16=new Jugador('Mesut Ozil',19,11,0,0,13,33,23),
      j17=new Jugador('Bastian Schweinsteiger',0,12,0,0,45,0,24),
      j18=new Jugador('Toni Kroos',22,11,0,0,23,0,17),
      j19=new Jugador('Mario Gotze',0,12,0,0,60,0,17),
      j20=new Jugador('Luis Suarez',178,27,0,0,0,69,66),
-     j21=new Jugador('Edison Cavani',5,35,138,112,0,12,56),
+     j21=new Jugador('Edinson Cavani',5,35,138,112,0,12,56),
      j22=new Jugador('Sergio Ramos',75,18,4,0,0,0,0),
      j23=new Jugador('Carles Puyol',13,2,0,0,0,0,3),
      j24=new Jugador('Xavi Hernandez',58,11,0,0,0,0,12),
@@ -53,7 +54,7 @@ let golesSeleccion=document.querySelector('.golesSeleccion');
      j31=new Jugador('Zabaleta',3,0,0,0,0,9,0),
      j32=new Jugador('Javier Pastore',0,4,29,17,0,0,2),
      j33=new Jugador('Marcos Rojo',0,0,0,0,0,1,3),
-     j34=new Jugador('Gerad Pique',32,16,0,0,0,0,5),
+     j34=new Jugador('Gerard Pique',32,16,0,0,0,0,5),
      j35=new Jugador('Fernando Torres',103,20,0,0,0,85,38),
      j36=new Jugador('David Villa',185,14,0,0,0,0,59),
      j37=new Jugador('Cesc Fabregas',28,20,3,0,0,50,15),
@@ -66,7 +67,7 @@ let golesSeleccion=document.querySelector('.golesSeleccion');
      j44=new Jugador('Pele',0,0,0,0,0,0,77),
      j45=new Jugador('Zlatan Ibrahimovic',0,48,113,156,0,0,62),
      j46=new Jugador('Harry Kane',0,25,0,0,30,213,62),
-     j47=new Jugador('Daavid Beckham',13,16,0,2,0,62,17),
+     j47=new Jugador('David Beckham',13,16,0,2,0,62,17),
      j48=new Jugador('Steven Gerrard',0,21,0,0,0,120,21),
      j49=new Jugador('Frank Lampard',0,23,0,0,0,176,29),
      j50=new Jugador('Xavi Alonso',13,8,0,0,5,14,16);
@@ -76,10 +77,12 @@ let golesSeleccion=document.querySelector('.golesSeleccion');
         j41,j42,j43,j44,j45,j46,j47,j48,j49,j50] 
 
 const barajar=(Jugadores)=>{
-    return _.shuffle(Jugadores);
+    jugadores=_.shuffle(Jugadores)
+    return jugadores;
 }
-const solicitarJugador=(Jugadores)=>{
-    return Jugadores.pop();
+const solicitarJugador=()=>{
+    barajar(jugadores);
+    return jugadores.pop();
 }
 
 btnJugar.addEventListener('click',()=>{
@@ -87,8 +90,23 @@ btnJugar.addEventListener('click',()=>{
     nombreJugador.innerHTML="Nombre: "+jugador.nombre;
     golesLiga.innerHTML="La Liga: "+jugador.golesEnLiga;
     golesPremier.innerHTML="Premier League: "+jugador.golesEnPremierLeague;
+    golesBundesLiga.innerHTML="BundesLiga: "+jugador.golesEnBundesLiga;
+    golesLegue1.innerHTML="Legue 1: "+jugador.golesEnLigueOne;
+    golesSerieA.innerHTML="Serie A: "+jugador.golesEnSerieA;
+    golesChampions.innerHTML="Champions: "+jugador.golesEnChampions;
+    golesSeleccion.innerHTML="Seleccion: "+jugador.golesEnSeleccion;
+
+    const ImgJugador=document.createElement('img');
+    //`assets/cartas/${carta}.png`
+    ImgJugador.src= `../img/jugadores/${jugador.nombre}.jpg`;
+
+    imgJugador.append(ImgJugador);
 });
 
+console.log(barajar(jugadores));
+console.log(solicitarJugador(jugadores));
+console.log(barajar(jugadores));
+console.log(solicitarJugador(jugadores));
 console.log(barajar(jugadores));
 console.log(solicitarJugador(jugadores));
 
