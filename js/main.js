@@ -1,14 +1,24 @@
 import Jugador from './Jugador.js';
 //ARREGLO DE JUGADORES
-let JugadoresArray=['Andrea Pirlo','Andres Iniesta','Bastian Schweinsteiger','Carles Puyol','Carlos Tevez',
+/*let JugadoresArray=['Andrea Pirlo','Andres Iniesta','Bastian Schweinsteiger','Carles Puyol','Carlos Tevez',
                     'Cesc Fabregas','Cristiano Ronaldo','Dani Alves','Daniele DeRossi','David Beckham','David Villa','Deco',
                     'DiMaria','Edison Cavani','Fabio Cannavaro','Fernando Torres','Frank Lampard','Gerad Pique',
                     'GRossi','Harry Kane','Higuain','Javier Pastore','Kaka','Kun Agüero','Lavezzi','Luis Figo',
                     'Luis Suarez','Marcos Reus','Marcos Rojo','Mario Gotze','Mascherano','Messi','Mesut Özil',
                     'Neymar','Otamendi','Paolo Maldini','Pele','Ricardo Carvalho','Ronaldinho','Ronaldo Nazario',
                     'Sergio Ramos','Steven Gerrard','Thierry Henry','Tomas Muller','Toni Kroos','Xavi Alonso',
-                    'Xavi Hernandez','Zabaleta','Zidane','Zlatan Ibrahimovic'];
+                    'Xavi Hernandez','Zabaleta','Zidane','Zlatan Ibrahimovic'];*/
 
+//REFERENCIAS DEL HTML
+let btnJugar=document.querySelector('.btnJugar');
+let nombreJugador=document.querySelector('.nombreJugador');
+let golesLiga=document.querySelector('.golesLiga'); 
+let golesPremier=document.querySelector('.golesPremier');
+let golesBundesLiga=document.querySelector('.golesBundesLiga');                 
+let golesLegue1=document.querySelector('.golesLegue1');
+let golesSerieA=document.querySelector('.golesSerieA');
+let golesChampions=document.querySelector('.golesChampions');
+let golesSeleccion=document.querySelector('.golesSeleccion');    
 
  let j1=new Jugador('Messi',474,129,22,0,0,0,106),
      j2=new Jugador('CristianoRonaldo',311,140,0,81,0,103,129),
@@ -55,19 +65,31 @@ let JugadoresArray=['Andrea Pirlo','Andres Iniesta','Bastian Schweinsteiger','Ca
      j43=new Jugador('Paolo Maldini',0,2,0,29,0,0,7),
      j44=new Jugador('Pele',0,0,0,0,0,0,77),
      j45=new Jugador('Zlatan Ibrahimovic',0,48,113,156,0,0,62),
-     j46=new Jugador('',0,12,0,0,45,0,24),
-     j47=new Jugador('',0,12,0,0,45,0,24),
-     j48=new Jugador('',0,12,0,0,45,0,24),
-     j49=new Jugador('',0,12,0,0,45,0,24),
-     j59=new Jugador('',0,12,0,0,45,0,24)
+     j46=new Jugador('Harry Kane',0,25,0,0,30,213,62),
+     j47=new Jugador('Daavid Beckham',13,16,0,2,0,62,17),
+     j48=new Jugador('Steven Gerrard',0,21,0,0,0,120,21),
+     j49=new Jugador('Frank Lampard',0,23,0,0,0,176,29),
+     j50=new Jugador('Xavi Alonso',13,8,0,0,5,14,16);
+
+     let jugadores=[j1,j2,j3,j4,j5,j6,j7,j8,j9,j10,j11,j12,j13,j14,j15,j16,j17,j18,j19,j20,
+        j21,j22,j23,j24,j25,j26,j27,j28,j29,j30,j31,j32,j33,j34,j35,j36,j37,j38,j39,j40,
+        j41,j42,j43,j44,j45,j46,j47,j48,j49,j50] 
+
 const barajar=(Jugadores)=>{
     return _.shuffle(Jugadores);
 }
 const solicitarJugador=(Jugadores)=>{
     return Jugadores.pop();
 }
-console.log(JugadoresArray);
-console.log(barajar(JugadoresArray));
-console.log(solicitarJugador(JugadoresArray));
-console.log(j1);
-console.log(j2);
+
+btnJugar.addEventListener('click',()=>{
+    let jugador=solicitarJugador(jugadores);
+    nombreJugador.innerHTML="Nombre: "+jugador.nombre;
+    golesLiga.innerHTML="La Liga: "+jugador.golesEnLiga;
+    golesPremier.innerHTML="Premier League: "+jugador.golesEnPremierLeague;
+});
+
+console.log(barajar(jugadores));
+console.log(solicitarJugador(jugadores));
+
+
